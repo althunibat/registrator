@@ -9,7 +9,7 @@ RUN \
     -a -o bin/registrator .
 
 FROM alpine:3.18.2
-RUN apk update --no-cache \
+RUN apk upgrade --no-cache \
 	&& apk add --no-cache ca-certificates
 COPY --from=builder /go/src/github.com/althunibat/registrator/bin/registrator /bin/registrator
 
